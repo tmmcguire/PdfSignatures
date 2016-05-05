@@ -7,5 +7,15 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/PDFSignatures/lib/itextpdf-5.5.9-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/bcprov-jdk15on-154.jar" sourcepath="lib/bcprov-jdk15on-154-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/PDFSignatures/lib/docs1.5on.zip!/docs1.5on"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/bcpkix-jdk15on-154.jar" sourcepath="lib/bcpkix-jdk15on-154-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/PDFSignatures/lib/bcpkix-jdk15on-154.zip!/bcpkix-jdk15on-154/javadoc"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
