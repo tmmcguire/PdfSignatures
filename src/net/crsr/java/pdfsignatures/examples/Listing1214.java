@@ -46,7 +46,6 @@ public class Listing1214 {
 			throws FileNotFoundException, IOException, DocumentException, GeneralSecurityException {
 		KeyStore ks = KeyStore.getInstance(/* "pkcs12" */ "JKS");
 		ks.load(new FileInputStream(keystorePath), keystorePassword.toCharArray());
-		// keystorePassword.toCharArray());
 		String alias = (String) ks.aliases().nextElement();
 		PrivateKey pk = (PrivateKey) ks.getKey(alias, keyPassword.toCharArray());
 		Certificate[] chain = ks.getCertificateChain(alias);
@@ -57,9 +56,10 @@ public class Listing1214 {
 		PdfStamper stamper = PdfStamper.createSignature(reader, os, '\0');
 		// Creating the appearance
 		PdfSignatureAppearance appearance = stamper.getSignatureAppearance();
+		appearance.setCertificationLevel(PdfSignatureAppearance.CERTIFIED_NO_CHANGES_ALLOWED);
 		appearance.setReason("It's personal");
 		appearance.setLocation("Foobar");
-		appearance.setVisibleSignature(new Rectangle(36, 748, 144, 780), 1, "sig");
+		appearance.setVisibleSignature(new Rectangle(72, 732, 144, 780), 1, null /* "mySig" */);
 		// Creating the signature
 		ExternalDigest digest = new BouncyCastleDigest();
 		ExternalSignature signature = new PrivateKeySignature(pk, digestAlgorithm, provider);
