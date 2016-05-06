@@ -59,7 +59,7 @@ public class Listing1214 {
 		appearance.setCertificationLevel(PdfSignatureAppearance.CERTIFIED_NO_CHANGES_ALLOWED);
 		appearance.setReason("It's personal");
 		appearance.setLocation("Foobar");
-		appearance.setVisibleSignature(new Rectangle(72, 732, 144, 780), 1, null /* "mySig" */);
+		appearance.setVisibleSignature(new Rectangle(72, 732, 144, 780), 1, null);
 		// Creating the signature
 		ExternalDigest digest = new BouncyCastleDigest();
 		ExternalSignature signature = new PrivateKeySignature(pk, digestAlgorithm, provider);
